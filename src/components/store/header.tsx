@@ -79,8 +79,8 @@ export default function StoreHeader() {
             </div>
 
             {/* Logo — always centred */}
-            <Link href="/" className="absolute left-1/2 -translate-x-1/2">
-              <span className="font-[family-name:var(--font-serif)] text-lg lg:text-xl font-medium tracking-[0.15em] uppercase text-black whitespace-nowrap">
+            <Link href="/" className="absolute left-1/2 -translate-x-1/2 max-w-[160px] lg:max-w-none">
+              <span className="font-[family-name:var(--font-serif)] text-sm lg:text-xl font-medium tracking-[0.12em] lg:tracking-[0.15em] uppercase text-black whitespace-nowrap">
                 Renéri Couture
               </span>
             </Link>
