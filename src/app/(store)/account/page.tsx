@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -23,7 +23,7 @@ const statusColors: Record<string, "default" | "success" | "warning" | "secondar
   returned: "destructive",
 };
 
-export default function AccountPage() {
+function AccountPageInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [mode, setMode] = useState<"login" | "register">("login");
@@ -383,5 +383,13 @@ export default function AccountPage() {
       </div>
 
     </div>
+  );
+}
+
+export default function AccountPage() {
+  return (
+    <Suspense fallback={<div className="flex items-center justify-center py-20"><div className="animate-spin h-6 w-6 border-2 border-neutral-300 border-t-neutral-900 rounded-full" /></div>}>
+      <AccountPageInner />
+    </Suspense>
   );
 }
