@@ -9,7 +9,7 @@ import { User, Mail, Lock, LogOut, Package, LayoutDashboard, ChevronRight, Heart
 import Link from "next/link";
 import { formatCurrency } from "@/lib/utils";
 import { Order } from "@/lib/types";
-import { useWishlistStore } from "@/lib/store";
+import { useWishlist } from "@/lib/useWishlist";
 
 interface AuthUser { id: string; email: string; firstName: string; lastName: string; role: string; }
 
@@ -33,7 +33,7 @@ export default function AccountPage() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [ordersLoading, setOrdersLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"orders" | "wishlist">("orders");
-  const { items: wishlistItems, toggle: toggleWishlist } = useWishlistStore();
+  const { items: wishlistItems, toggle: toggleWishlist } = useWishlist();
 
   useEffect(() => {
     fetch("/api/auth/me")

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Heart } from "lucide-react";
 import { Product } from "@/lib/types";
 import { formatCurrency } from "@/lib/utils";
-import { useWishlistStore } from "@/lib/store";
+import { useWishlist } from "@/lib/useWishlist";
 
 interface ProductCardProps {
   product: Product;
@@ -15,7 +15,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const discountPercent = hasDiscount
     ? Math.round(((product.compareAtPrice! - product.price) / product.compareAtPrice!) * 100)
     : 0;
-  const { toggle, isWishlisted } = useWishlistStore();
+  const { toggle, isWishlisted } = useWishlist();
   const wishlisted = isWishlisted(product.id);
 
   return (

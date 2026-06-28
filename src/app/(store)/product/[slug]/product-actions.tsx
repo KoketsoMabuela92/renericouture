@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { ShoppingBag, Heart, Check } from "lucide-react";
-import { useCartStore, useWishlistStore } from "@/lib/store";
+import { useCartStore } from "@/lib/store";
+import { useWishlist } from "@/lib/useWishlist";
 import { Product } from "@/lib/types";
 import { formatCurrency } from "@/lib/utils";
 
@@ -52,7 +53,7 @@ export default function ProductActions({ product, onColorChange }: { product: Pr
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
   const addItem = useCartStore((s) => s.addItem);
-  const { toggle, isWishlisted } = useWishlistStore();
+  const { toggle, isWishlisted } = useWishlist();
   const wishlisted = isWishlisted(product.id);
 
   const hasDiscount = product.compareAtPrice && product.compareAtPrice > product.price;

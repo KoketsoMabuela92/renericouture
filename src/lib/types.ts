@@ -98,6 +98,13 @@ export interface Category {
   image?: string;
 }
 
+export interface WishlistItem {
+  id: string;
+  customerId: string;
+  productId: string;
+  addedAt: string;
+}
+
 export interface DashboardStats {
   totalRevenue: number;
   totalOrders: number;

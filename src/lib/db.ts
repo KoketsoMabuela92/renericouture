@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Product, Customer, Order, Category } from "./types";
+import { Product, Customer, Order, Category, WishlistItem } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -425,3 +425,32 @@ const seedProducts: Product[] = [
     updatedAt: new Date().toISOString(),
   },
 ];
+
+// Wishlist
+export function getWishlist(customerId: string): WishlistItem[] {
+  const all = readJsonFile<WishlistItem>("wishlist.json", []);
+  return all.filter((w) => w.customerId === customerId);
+}
+
+export function addToWishlist(item: WishlistItem): WishlistItem {
+  const all = readJsonFile<WishlistItem>("wishlist.json", []);
+  const exists = all.find((w) => w.customerId === item.customerId && w.productId === item.productId);
+  if (exists) return exists;
+  all.push(item);
+  writeJsonFile("wishlist.json", all);
+  return item;
+}
+
+export function removeFromWishlist(customerId: string, productId: string): void {
+  const all = readJsonFile<WishlistItem>("wishlist.json", []);
+  writeJsonFile("wishlist.json", all.filter((w) => !(w.customerId === customerId && w.productId === productId)));
+}
+
+export function syncWishlist(customerId: string, productIds: string[]): void {
+  const all = readJsonFile<WishlistItem>("wishlist.json", []);
+  const existing = all.filter((w) => w.customerId === customerId).map((w) => w.productId);
+  const toAdd = productIds.filter((id) => !existing.includes(id));
+  const now = new Date().toISOString();
+  toAdd.forEach((productId) => all.push({ id: `${customerId}-${productId}`, customerId, productId, addedAt: now }));
+  writeJsonFile("wishlist.json", all);
+}
