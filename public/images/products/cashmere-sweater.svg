@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" fill="none">
+  <rect width="600" height="800" fill="#F0EDE9"/>
+  <!-- Sweater body -->
+  <path d="M200 260 Q210 220 270 210 Q290 208 300 205 Q310 208 330 210 Q390 220 400 260 L410 580 Q410 600 390 600 L210 600 Q190 600 190 580 Z" fill="#7A6B5D" stroke="#6A5B4D" stroke-width="2"/>
+  <!-- Crew neck -->
+  <ellipse cx="300" cy="210" rx="50" ry="20" fill="#6A5B4D" stroke="#5A4B3D" stroke-width="2"/>
+  <ellipse cx="300" cy="210" rx="35" ry="12" fill="#7A6B5D"/>
+  <!-- Ribbing at bottom -->
+  <rect x="190" y="570" width="220" height="30" rx="4" fill="#6A5B4D" opacity="0.6"/>
+  <!-- Sleeves -->
+  <path d="M200 260 L140 330 Q130 350 145 355 L200 370" fill="#7A6B5D" stroke="#6A5B4D" stroke-width="2"/>
+  <path d="M400 260 L460 330 Q470 350 455 355 L400 370" fill="#7A6B5D" stroke="#6A5B4D" stroke-width="2"/>
+  <!-- Cuff ribbing -->
+  <rect x="130" y="340" width="40" height="15" rx="4" fill="#6A5B4D" opacity="0.6" transform="rotate(-30 150 347)"/>
+  <rect x="430" y="340" width="40" height="15" rx="4" fill="#6A5B4D" opacity="0.6" transform="rotate(30 450 347)"/>
+  <!-- Knit texture lines -->
+  <line x1="230" y1="280" x2="230" y2="560" stroke="#6A5B4D" stroke-width="1" opacity="0.3"/>
+  <line x1="260" y1="270" x2="260" y2="560" stroke="#6A5B4D" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="265" x2="300" y2="560" stroke="#6A5B4D" stroke-width="1" opacity="0.3"/>
+  <line x1="340" y1="270" x2="340" y2="560" stroke="#6A5B4D" stroke-width="1" opacity="0.3"/>
+  <line x1="370" y1="280" x2="370" y2="560" stroke="#6A5B4D" stroke-width="1" opacity="0.3"/>
+  <!-- Hanger -->
+  <path d="M300 120 L300 160 M250 160 Q300 140 350 160" fill="none" stroke="#B5A595" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="300" cy="118" r="6" fill="none" stroke="#B5A595" stroke-width="2"/>
+  <!-- Label -->
+  <text x="300" y="700" text-anchor="middle" font-family="system-ui" font-size="15" font-weight="600" letter-spacing="3" fill="#6A5B4D">CASHMERE SWEATER</text>
+  <text x="300" y="725" text-anchor="middle" font-family="system-ui" font-size="11" letter-spacing="2" fill="#A0907A">RENÉRI COUTURE</text>
+</svg>

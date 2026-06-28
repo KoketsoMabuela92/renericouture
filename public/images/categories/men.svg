@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <rect width="400" height="500" fill="#F0F2F5"/>
+  <!-- Suit jacket silhouette -->
+  <g transform="translate(110, 40)">
+    <!-- Hanger -->
+    <path d="M90 20 L90 45 M55 45 Q90 28 125 45" fill="none" stroke="#8090A0" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="90" cy="18" r="5" fill="none" stroke="#8090A0" stroke-width="2"/>
+    <!-- Jacket body -->
+    <path d="M45 60 Q55 50 75 48 L90 100 L105 48 Q125 50 135 60 L155 120 Q160 130 150 135 L135 140 L140 390 Q140 405 125 405 L55 405 Q40 405 40 390 L45 140 L30 135 Q20 130 25 120 Z" fill="#2C3E50" stroke="#1A2A3A" stroke-width="1.5"/>
+    <!-- Lapels -->
+    <path d="M75 48 L60 90 L75 110" fill="#3A5060" stroke="#1A2A3A" stroke-width="1"/>
+    <path d="M105 48 L120 90 L105 110" fill="#3A5060" stroke="#1A2A3A" stroke-width="1"/>
+    <!-- Shirt/tie -->
+    <path d="M80 48 L90 100 L100 48" fill="#E8EDF5" stroke="#D0D8E8" stroke-width="1"/>
+    <path d="M87 65 L90 200 L93 65" fill="#8B0000" stroke="#6B0000" stroke-width="0.5"/>
+    <!-- Buttons -->
+    <circle cx="90" cy="160" r="3" fill="#4A5A6A"/>
+    <circle cx="90" cy="200" r="3" fill="#4A5A6A"/>
+    <!-- Pocket -->
+    <rect x="60" y="200" width="25" height="3" rx="1.5" fill="#1A2A3A" opacity="0.5"/>
+  </g>
+  <!-- Text -->
+  <text x="200" y="470" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="600" letter-spacing="3" fill="#4A5A7A">MEN</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <rect width="400" height="500" fill="#FDF8F3"/>
+  <!-- Handbag -->
+  <g transform="translate(100, 80)">
+    <!-- Handles -->
+    <path d="M60 80 Q60 30 100 30 Q140 30 140 80" fill="none" stroke="#8B6914" stroke-width="5" stroke-linecap="round"/>
+    <!-- Bag body -->
+    <rect x="30" y="120" width="140" height="120" rx="15" fill="#C4943C" stroke="#A87830" stroke-width="2"/>
+    <!-- Flap -->
+    <path d="M30 120 Q100 170 170 120" fill="#D4A44C" stroke="#A87830" stroke-width="2"/>
+    <!-- Clasp -->
+    <circle cx="100" cy="155" r="8" fill="#DAA520" stroke="#B8860B" stroke-width="1.5"/>
+    <circle cx="100" cy="155" r="3" fill="#F0D060"/>
+    <!-- Stitching -->
+    <rect x="40" y="130" width="120" height="100" rx="10" fill="none" stroke="#A87830" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+  </g>
+  <!-- Sunglasses -->
+  <g transform="translate(115, 310)">
+    <ellipse cx="45" cy="20" rx="35" ry="25" fill="#2A2A2A" stroke="#1A1A1A" stroke-width="1.5"/>
+    <ellipse cx="125" cy="20" rx="35" ry="25" fill="#2A2A2A" stroke="#1A1A1A" stroke-width="1.5"/>
+    <path d="M80 20 Q85 12 90 20" fill="none" stroke="#1A1A1A" stroke-width="2"/>
+    <line x1="10" y1="15" x2="-10" y2="10" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+    <line x1="160" y1="15" x2="180" y2="10" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+    <!-- Lens shine -->
+    <ellipse cx="35" cy="15" rx="8" ry="5" fill="#444" opacity="0.3"/>
+    <ellipse cx="115" cy="15" rx="8" ry="5" fill="#444" opacity="0.3"/>
+  </g>
+  <!-- Text -->
+  <text x="200" y="470" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="600" letter-spacing="3" fill="#8B6914">ACCESSORIES</text>
+</svg>

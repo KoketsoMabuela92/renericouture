@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" fill="none">
+  <rect width="600" height="800" fill="#F2EDE6"/>
+  <!-- Trench coat body -->
+  <path d="M190 230 Q200 200 255 190 L280 185 L300 270 L320 185 L345 190 Q400 200 410 230 L440 610 Q440 635 415 635 L185 635 Q160 635 160 610 Z" fill="#C8A878" stroke="#A8886A" stroke-width="2"/>
+  <!-- Double breast lapels -->
+  <path d="M255 190 L235 220 L265 260 L265 300 L240 320 Z" fill="#B89868" stroke="#A8886A" stroke-width="1.5"/>
+  <path d="M345 190 L365 220 L335 260 L335 300 L360 320 Z" fill="#B89868" stroke="#A8886A" stroke-width="1.5"/>
+  <!-- Inner shirt -->
+  <path d="M278 185 L300 270 L322 185" fill="#F0EBE3" stroke="#D8D0C0" stroke-width="1"/>
+  <!-- Belt -->
+  <rect x="170" y="350" width="260" height="12" rx="2" fill="#986848" stroke="#786030" stroke-width="1.5"/>
+  <rect x="293" y="344" width="14" height="24" rx="2" fill="#B08850"/>
+  <rect x="296" y="350" width="8" height="12" rx="1" fill="#986848"/>
+  <!-- Double breast buttons -->
+  <circle cx="273" cy="290" r="5" fill="#A08060"/>
+  <circle cx="273" cy="320" r="5" fill="#A08060"/>
+  <circle cx="327" cy="290" r="5" fill="#A08060"/>
+  <circle cx="327" cy="320" r="5" fill="#A08060"/>
+  <!-- Epaulettes -->
+  <rect x="195" y="228" width="40" height="10" rx="3" fill="#B89868" stroke="#A8886A" stroke-width="1"/>
+  <rect x="365" y="228" width="40" height="10" rx="3" fill="#B89868" stroke="#A8886A" stroke-width="1"/>
+  <!-- Sleeves -->
+  <path d="M190 230 L135 330 Q125 355 140 360 L195 375" fill="#C8A878" stroke="#A8886A" stroke-width="2"/>
+  <path d="M410 230 L465 330 Q475 355 460 360 L405 375" fill="#C8A878" stroke="#A8886A" stroke-width="2"/>
+  <!-- Cuff belt -->
+  <rect x="133" y="345" width="35" height="8" rx="2" fill="#986848" transform="rotate(-20 150 349)"/>
+  <rect x="432" y="345" width="35" height="8" rx="2" fill="#986848" transform="rotate(20 450 349)"/>
+  <!-- Hanger -->
+  <path d="M300 110 L300 150 M248 150 Q300 128 352 150" fill="none" stroke="#B5A595" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="300" cy="108" r="6" fill="none" stroke="#B5A595" stroke-width="2"/>
+  <text x="300" y="710" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="600" letter-spacing="4" fill="#8A7050">TRENCH COAT</text>
+  <text x="300" y="735" text-anchor="middle" font-family="system-ui" font-size="11" letter-spacing="2" fill="#B09070">RENÉRI COUTURE</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <rect width="400" height="500" fill="#F8F4F0"/>
+  <!-- Elegant dress silhouette -->
+  <g transform="translate(120, 40)">
+    <!-- Hanger -->
+    <path d="M80 20 L80 40 M50 40 Q80 25 110 40" fill="none" stroke="#C4B5A5" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="80" cy="18" r="5" fill="none" stroke="#C4B5A5" stroke-width="2"/>
+    <!-- Dress -->
+    <path d="M50 50 Q60 45 80 43 Q100 45 110 50 L120 70 Q115 80 105 85 L130 380 Q132 400 110 405 L50 405 Q28 400 30 380 L55 85 Q45 80 40 70 Z" fill="#D4A574" stroke="#C49564" stroke-width="1.5"/>
+    <!-- V-neckline -->
+    <path d="M60 50 Q80 70 100 50" fill="none" stroke="#C49564" stroke-width="1.5"/>
+    <!-- Waist cinch -->
+    <path d="M55 180 Q80 170 105 180" fill="none" stroke="#C49564" stroke-width="1.5"/>
+    <!-- Flowing detail -->
+    <path d="M55 250 Q80 240 105 250" fill="none" stroke="#C49564" stroke-width="1" opacity="0.5"/>
+    <path d="M45 320 Q80 310 115 320" fill="none" stroke="#C49564" stroke-width="1" opacity="0.4"/>
+  </g>
+  <!-- Text -->
+  <text x="200" y="470" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="600" letter-spacing="3" fill="#8A7060">WOMEN</text>
+</svg>

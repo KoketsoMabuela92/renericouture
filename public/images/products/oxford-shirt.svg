@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" fill="none">
+  <rect width="600" height="800" fill="#F0F2F5"/>
+  <!-- Shirt body -->
+  <path d="M210 260 Q215 230 260 220 L280 215 L300 280 L320 215 L340 220 Q385 230 390 260 L400 600 Q400 620 380 620 L220 620 Q200 620 200 600 Z" fill="#E8EDF5" stroke="#D0D8E8" stroke-width="2"/>
+  <!-- Collar -->
+  <path d="M260 220 L240 200 Q238 195 243 193 L280 215" fill="#DCE3F0" stroke="#C0C8D8" stroke-width="1.5"/>
+  <path d="M340 220 L360 200 Q362 195 357 193 L320 215" fill="#DCE3F0" stroke="#C0C8D8" stroke-width="1.5"/>
+  <!-- Button placket -->
+  <rect x="295" y="215" width="10" height="400" fill="#D8E0F0" opacity="0.5"/>
+  <!-- Buttons -->
+  <circle cx="300" cy="260" r="3.5" fill="#C0C8D8"/>
+  <circle cx="300" cy="310" r="3.5" fill="#C0C8D8"/>
+  <circle cx="300" cy="360" r="3.5" fill="#C0C8D8"/>
+  <circle cx="300" cy="410" r="3.5" fill="#C0C8D8"/>
+  <circle cx="300" cy="460" r="3.5" fill="#C0C8D8"/>
+  <circle cx="300" cy="510" r="3.5" fill="#C0C8D8"/>
+  <!-- Chest pocket -->
+  <path d="M330 300 L370 300 L370 340 L330 340 Z" fill="none" stroke="#C0C8D8" stroke-width="1.5"/>
+  <!-- Sleeves -->
+  <path d="M210 260 L150 320 Q140 340 155 345 L210 360" fill="#E8EDF5" stroke="#D0D8E8" stroke-width="2"/>
+  <path d="M390 260 L450 320 Q460 340 445 345 L390 360" fill="#E8EDF5" stroke="#D0D8E8" stroke-width="2"/>
+  <!-- Curved hem -->
+  <path d="M200 600 Q300 640 400 600" fill="none" stroke="#D0D8E8" stroke-width="1.5"/>
+  <!-- Hanger -->
+  <path d="M300 110 L300 150 M250 150 Q300 130 350 150" fill="none" stroke="#B5A595" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="300" cy="108" r="6" fill="none" stroke="#B5A595" stroke-width="2"/>
+  <!-- Label -->
+  <text x="300" y="700" text-anchor="middle" font-family="system-ui" font-size="15" font-weight="600" letter-spacing="3" fill="#6070A0">OXFORD SHIRT</text>
+  <text x="300" y="725" text-anchor="middle" font-family="system-ui" font-size="11" letter-spacing="2" fill="#90A0C0">RENÉRI COUTURE</text>
+</svg>

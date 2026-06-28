@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" fill="none">
+  <rect width="600" height="800" fill="#EEEAE6"/>
+  <!-- Blazer shape -->
+  <path d="M190 220 Q200 190 260 180 L280 175 L300 250 L320 175 L340 180 Q400 190 410 220 L440 600 Q440 620 420 620 L180 620 Q160 620 160 600 Z" fill="#4A4540" stroke="#3A3530" stroke-width="2"/>
+  <!-- Lapels -->
+  <path d="M260 180 L280 175 L300 250 L260 300 L240 260 Z" fill="#55504A" stroke="#3A3530" stroke-width="1.5"/>
+  <path d="M340 180 L320 175 L300 250 L340 300 L360 260 Z" fill="#55504A" stroke="#3A3530" stroke-width="1.5"/>
+  <!-- Inner shirt/collar -->
+  <path d="M280 175 L300 250 L320 175" fill="#F5F0EB" stroke="#E0D5CA" stroke-width="1"/>
+  <!-- Pocket -->
+  <rect x="230" y="380" width="60" height="5" rx="2" fill="#3A3530" opacity="0.5"/>
+  <!-- Button -->
+  <circle cx="300" cy="350" r="5" fill="#8A7A6A"/>
+  <!-- Sleeves -->
+  <path d="M190 220 L140 300 Q130 320 145 330 L195 360" fill="#4A4540" stroke="#3A3530" stroke-width="2"/>
+  <path d="M410 220 L460 300 Q470 320 455 330 L405 360" fill="#4A4540" stroke="#3A3530" stroke-width="2"/>
+  <!-- Hanger -->
+  <path d="M300 100 L300 140 M250 140 Q300 120 350 140" fill="none" stroke="#B5A595" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="300" cy="98" r="6" fill="none" stroke="#B5A595" stroke-width="2"/>
+  <!-- Label -->
+  <text x="300" y="700" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="600" letter-spacing="4" fill="#6A5A4A">WOOL BLAZER</text>
+  <text x="300" y="725" text-anchor="middle" font-family="system-ui" font-size="11" letter-spacing="2" fill="#A0907A">RENÉRI COUTURE</text>
+</svg>

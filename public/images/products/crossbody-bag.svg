@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" fill="none">
+  <rect width="600" height="800" fill="#F2EDE7"/>
+  <!-- Strap -->
+  <path d="M200 180 Q180 160 200 140 Q300 80 400 140 Q420 160 400 180" fill="none" stroke="#8B6914" stroke-width="6" stroke-linecap="round"/>
+  <!-- Bag body -->
+  <rect x="180" y="250" width="240" height="300" rx="20" fill="#C4943C" stroke="#A87830" stroke-width="2"/>
+  <!-- Flap -->
+  <path d="M180 250 L180 310 Q300 380 420 310 L420 250 Q420 230 400 230 L200 230 Q180 230 180 250 Z" fill="#D4A44C" stroke="#A87830" stroke-width="2"/>
+  <!-- Clasp -->
+  <rect x="285" y="330" width="30" height="20" rx="4" fill="#DAA520" stroke="#B8860B" stroke-width="1.5"/>
+  <circle cx="300" cy="340" r="5" fill="#F0D060" stroke="#B8860B" stroke-width="1"/>
+  <!-- Strap connection -->
+  <circle cx="195" cy="260" r="8" fill="#DAA520" stroke="#B8860B" stroke-width="1.5"/>
+  <circle cx="405" cy="260" r="8" fill="#DAA520" stroke="#B8860B" stroke-width="1.5"/>
+  <!-- Stitching -->
+  <rect x="195" y="265" width="210" height="270" rx="15" fill="none" stroke="#A87830" stroke-width="1" stroke-dasharray="6 4" opacity="0.5"/>
+  <!-- Bottom seam -->
+  <line x1="200" y1="480" x2="400" y2="480" stroke="#A87830" stroke-width="1" opacity="0.4"/>
+  <!-- Label -->
+  <text x="300" y="700" text-anchor="middle" font-family="system-ui" font-size="15" font-weight="600" letter-spacing="3" fill="#8B6914">CROSSBODY BAG</text>
+  <text x="300" y="725" text-anchor="middle" font-family="system-ui" font-size="11" letter-spacing="2" fill="#B89A50">RENÉRI COUTURE</text>
+</svg>

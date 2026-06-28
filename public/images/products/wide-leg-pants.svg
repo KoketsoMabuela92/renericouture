@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" fill="none">
+  <rect width="600" height="800" fill="#F5F2F0"/>
+  <!-- Wide leg trousers -->
+  <path d="M210 190 L390 190 Q398 190 398 198 L398 235 L430 640 Q432 662 408 662 L330 662 Q308 662 308 640 L305 370 L300 370 L295 640 Q295 662 272 662 L192 662 Q168 662 170 640 L202 235 L202 198 Q202 190 210 190 Z" fill="#3D3530" stroke="#2D2520" stroke-width="2"/>
+  <!-- Waistband -->
+  <rect x="202" y="190" width="196" height="32" rx="3" fill="#2D2520" stroke="#1D1510" stroke-width="1.5"/>
+  <!-- Waistband detail -->
+  <rect x="208" y="196" width="184" height="8" rx="2" fill="#3D3530" opacity="0.5"/>
+  <!-- Wide leg silhouette detail - crease -->
+  <line x1="262" y1="270" x2="232" y2="640" stroke="#2D2520" stroke-width="1.5" opacity="0.5"/>
+  <line x1="338" y1="270" x2="368" y2="640" stroke="#2D2520" stroke-width="1.5" opacity="0.5"/>
+  <!-- Pockets -->
+  <path d="M220 228 Q236 265 215 298" fill="none" stroke="#2D2520" stroke-width="1.5" opacity="0.6"/>
+  <path d="M380 228 Q364 265 385 298" fill="none" stroke="#2D2520" stroke-width="1.5" opacity="0.6"/>
+  <!-- Fly -->
+  <line x1="300" y1="222" x2="300" y2="315" stroke="#2D2520" stroke-width="1.5" opacity="0.4"/>
+  <!-- Hook and bar closure -->
+  <rect x="292" y="196" width="16" height="4" rx="1" fill="#1D1510"/>
+  <!-- Hanger -->
+  <path d="M300 100 L300 140 M248 140 Q300 118 352 140" fill="none" stroke="#B5A595" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="300" cy="98" r="6" fill="none" stroke="#B5A595" stroke-width="2"/>
+  <text x="300" y="715" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="600" letter-spacing="3" fill="#4D4540">WIDE LEG PANTS</text>
+  <text x="300" y="740" text-anchor="middle" font-family="system-ui" font-size="11" letter-spacing="2" fill="#8D8580">RENÉRI COUTURE</text>
+</svg>

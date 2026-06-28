@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" fill="none">
+  <rect width="600" height="800" fill="#F0EDEA"/>
+  <!-- Linen shirt body -->
+  <path d="M205 240 Q215 210 265 200 L285 196 L300 275 L315 196 L335 200 Q385 210 395 240 L415 600 Q416 622 394 622 L206 622 Q184 622 185 600 Z" fill="#E8D8C0" stroke="#D0C0A8" stroke-width="2"/>
+  <!-- Cuban collar -->
+  <path d="M265 200 L245 180 Q243 172 252 170 L285 196" fill="#D8C8B0" stroke="#C0A890" stroke-width="1.5"/>
+  <path d="M335 200 L355 180 Q357 172 348 170 L315 196" fill="#D8C8B0" stroke="#C0A890" stroke-width="1.5"/>
+  <!-- Placket -->
+  <rect x="293" y="196" width="14" height="408" rx="1" fill="#D8C8B0" opacity="0.5"/>
+  <!-- Buttons -->
+  <circle cx="300" cy="250" r="4" fill="#C0A890"/>
+  <circle cx="300" cy="300" r="4" fill="#C0A890"/>
+  <circle cx="300" cy="350" r="4" fill="#C0A890"/>
+  <circle cx="300" cy="400" r="4" fill="#C0A890"/>
+  <circle cx="300" cy="450" r="4" fill="#C0A890"/>
+  <!-- Chest pocket -->
+  <rect x="320" y="280" width="50" height="48" rx="2" fill="none" stroke="#C0A890" stroke-width="1.5"/>
+  <!-- Linen texture lines horizontal -->
+  <line x1="200" y1="300" x2="400" y2="300" stroke="#D0C0A8" stroke-width="0.5" opacity="0.4"/>
+  <line x1="198" y1="350" x2="402" y2="350" stroke="#D0C0A8" stroke-width="0.5" opacity="0.4"/>
+  <line x1="196" y1="400" x2="404" y2="400" stroke="#D0C0A8" stroke-width="0.5" opacity="0.4"/>
+  <line x1="192" y1="450" x2="408" y2="450" stroke="#D0C0A8" stroke-width="0.5" opacity="0.4"/>
+  <line x1="190" y1="500" x2="410" y2="500" stroke="#D0C0A8" stroke-width="0.5" opacity="0.4"/>
+  <!-- Sleeves -->
+  <path d="M205 240 L148 320 Q138 342 155 348 L208 362" fill="#E8D8C0" stroke="#D0C0A8" stroke-width="2"/>
+  <path d="M395 240 L452 320 Q462 342 445 348 L392 362" fill="#E8D8C0" stroke="#D0C0A8" stroke-width="2"/>
+  <!-- Hanger -->
+  <path d="M300 108 L300 148 M248 148 Q300 125 352 148" fill="none" stroke="#B5A595" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="300" cy="106" r="6" fill="none" stroke="#B5A595" stroke-width="2"/>
+  <text x="300" y="710" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="600" letter-spacing="4" fill="#9A8A6A">LINEN SHIRT</text>
+  <text x="300" y="735" text-anchor="middle" font-family="system-ui" font-size="11" letter-spacing="2" fill="#C0B090">RENÉRI COUTURE</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" fill="none">
+  <rect width="600" height="800" fill="#F5F0EC"/>
+  <!-- Tote bag body -->
+  <rect x="150" y="260" width="300" height="280" rx="6" fill="#1A1A1A" stroke="#0A0A0A" stroke-width="2"/>
+  <!-- Top gusset -->
+  <rect x="155" y="255" width="290" height="18" rx="3" fill="#2A2A2A" stroke="#0A0A0A" stroke-width="1.5"/>
+  <!-- Handles -->
+  <path d="M210 255 L210 160 Q210 130 240 130 Q270 130 270 160 L270 255" fill="none" stroke="#1A1A1A" stroke-width="10" stroke-linecap="round"/>
+  <path d="M330 255 L330 160 Q330 130 360 130 Q390 130 390 160 L390 255" fill="none" stroke="#1A1A1A" stroke-width="10" stroke-linecap="round"/>
+  <!-- Handle inner lighter -->
+  <path d="M214 255 L214 163 Q214 138 240 138 Q266 138 266 163 L266 255" fill="none" stroke="#3A3A3A" stroke-width="4"/>
+  <path d="M334 255 L334 163 Q334 138 360 138 Q386 138 386 163 L386 255" fill="none" stroke="#3A3A3A" stroke-width="4"/>
+  <!-- Front panel with logo area -->
+  <rect x="185" y="310" width="230" height="160" rx="2" fill="#222222"/>
+  <!-- Brand monogram -->
+  <text x="300" y="398" text-anchor="middle" font-family="Georgia,serif" font-size="38" font-weight="400" letter-spacing="6" fill="#3A3A3A">RC</text>
+  <!-- Zip line -->
+  <line x1="165" y1="264" x2="435" y2="264" stroke="#333" stroke-width="2" stroke-dasharray="8 4" opacity="0.5"/>
+  <!-- Zipper pull -->
+  <circle cx="300" cy="264" r="5" fill="#666" stroke="#444" stroke-width="1"/>
+  <!-- Bottom seam -->
+  <line x1="160" y1="500" x2="440" y2="500" stroke="#2A2A2A" stroke-width="1.5" opacity="0.6"/>
+  <!-- Corner reinforcement -->
+  <rect x="150" y="260" width="20" height="20" rx="1" fill="#111111"/>
+  <rect x="430" y="260" width="20" height="20" rx="1" fill="#111111"/>
+  <rect x="150" y="520" width="20" height="20" rx="1" fill="#111111"/>
+  <rect x="430" y="520" width="20" height="20" rx="1" fill="#111111"/>
+  <text x="300" y="700" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="600" letter-spacing="4" fill="#1A1A1A">STRUCTURED TOTE</text>
+  <text x="300" y="725" text-anchor="middle" font-family="system-ui" font-size="11" letter-spacing="2" fill="#6A6A6A">RENÉRI COUTURE</text>
+</svg>
