@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { hashPassword, createToken } from "@/lib/auth";
 import { createCustomer, getCustomerByEmail } from "@/lib/db";
 import { generateId } from "@/lib/utils";
+import { sendWelcomeEmail } from "@/lib/email";
 
 export async function POST(request: NextRequest) {
   try {
@@ -28,6 +29,8 @@ export async function POST(request: NextRequest) {
     });
 
     const token = createToken(customer);
+
+    sendWelcomeEmail(firstName, email).catch(() => {});
 
     const response = NextResponse.json({
       user: { id: customer.id, email: customer.email, firstName, lastName, role: customer.role },

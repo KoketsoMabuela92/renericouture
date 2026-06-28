@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ShoppingBag, Heart, Check } from "lucide-react";
-import { useCartStore } from "@/lib/store";
+import { useCartStore, useWishlistStore } from "@/lib/store";
 import { Product } from "@/lib/types";
 import { formatCurrency } from "@/lib/utils";
 
@@ -52,6 +52,8 @@ export default function ProductActions({ product, onColorChange }: { product: Pr
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
   const addItem = useCartStore((s) => s.addItem);
+  const { toggle, isWishlisted } = useWishlistStore();
+  const wishlisted = isWishlisted(product.id);
 
   const hasDiscount = product.compareAtPrice && product.compareAtPrice > product.price;
 
@@ -181,8 +183,14 @@ export default function ProductActions({ product, onColorChange }: { product: Pr
             <><ShoppingBag className="h-3.5 w-3.5" strokeWidth={1.5} /> Add to Cart</>
           )}
         </button>
-        <button className="w-14 h-14 border border-neutral-200 hover:border-black transition-colors duration-200 flex items-center justify-center text-neutral-400 hover:text-black">
-          <Heart className="h-4 w-4" strokeWidth={1.5} />
+        <button
+          onClick={() => toggle(product)}
+          className={`w-14 h-14 border transition-colors duration-200 flex items-center justify-center ${
+            wishlisted ? "border-black bg-black text-white" : "border-neutral-200 hover:border-black text-neutral-400 hover:text-black"
+          }`}
+          aria-label={wishlisted ? "Remove from wishlist" : "Add to wishlist"}
+        >
+          <Heart className="h-4 w-4" strokeWidth={1.5} fill={wishlisted ? "currentColor" : "none"} />
         </button>
       </div>
 

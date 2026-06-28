@@ -6,7 +6,8 @@ import { useCartStore } from "@/lib/store";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { formatCurrency } from "@/lib/utils";
-import { Lock, CreditCard, ShieldCheck } from "lucide-react";
+import { Lock, CreditCard, ShieldCheck, User } from "lucide-react";
+import Link from "next/link";
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -15,8 +16,26 @@ export default function CheckoutPage() {
   const [step, setStep] = useState<"info" | "payment" | "success">("info");
   const [orderError, setOrderError] = useState("");
   const [hydrated, setHydrated] = useState(false);
+  const [authUser, setAuthUser] = useState<{email: string; firstName: string; lastName: string} | null>(null);
 
   useEffect(() => { setHydrated(true); }, []);
+
+  useEffect(() => {
+    fetch("/api/auth/me")
+      .then((r) => r.ok ? r.json() : null)
+      .then((u) => {
+        if (u?.email) {
+          setAuthUser(u);
+          setForm((prev) => ({
+            ...prev,
+            email: u.email || prev.email,
+            firstName: u.firstName || prev.firstName,
+            lastName: u.lastName || prev.lastName,
+          }));
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   const subtotal = items.reduce((acc, i) => acc + i.price * i.quantity, 0);
   const shipping = subtotal >= 1500 ? 0 : 150;
@@ -192,6 +211,26 @@ export default function CheckoutPage() {
         <div className="lg:col-span-3 space-y-8">
           {step === "info" && (
             <>
+              {/* Auth status */}
+              {authUser ? (
+                <div className="flex items-center gap-3 p-3 bg-neutral-50 border border-neutral-200 rounded-lg">
+                  <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center flex-shrink-0">
+                    <User className="h-4 w-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-neutral-900">{authUser.firstName} {authUser.lastName}</p>
+                    <p className="text-xs text-neutral-500">{authUser.email}</p>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex items-center justify-between p-3 bg-neutral-50 border border-neutral-200 rounded-lg">
+                  <p className="text-sm text-neutral-600">Already have an account?</p>
+                  <Link href={`/account?redirect=/checkout`} className="text-sm font-medium text-black underline underline-offset-2">
+                    Sign in
+                  </Link>
+                </div>
+              )}
+
               {/* Contact */}
               <div>
                 <h2 className="text-lg font-semibold text-neutral-900 mb-4">Contact Information</h2>

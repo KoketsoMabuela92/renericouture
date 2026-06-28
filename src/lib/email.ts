@@ -106,3 +106,46 @@ export async function sendOrderConfirmation(order: Order): Promise<void> {
     html,
   });
 }
+
+export async function sendWelcomeEmail(firstName: string, email: string): Promise<void> {
+  if (!process.env.SMTP_USER || !process.env.SMTP_PASS) return;
+
+  const html = `
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body style="font-family:'Helvetica Neue',Arial,sans-serif;background:#fafafa;margin:0;padding:40px 20px;">
+  <div style="max-width:560px;margin:0 auto;background:#fff;border-radius:8px;overflow:hidden;border:1px solid #eee;">
+    <div style="background:#111;padding:32px 40px;">
+      <h1 style="color:#fff;font-size:22px;font-weight:300;letter-spacing:0.1em;margin:0;">RENÉRI COUTURE</h1>
+    </div>
+    <div style="padding:40px;">
+      <h2 style="font-size:20px;font-weight:600;color:#111;margin:0 0 12px;">Welcome, ${firstName}.</h2>
+      <p style="color:#666;font-size:14px;line-height:1.7;margin:0 0 24px;">
+        Your account has been created. Explore our latest collections and enjoy complimentary shipping on orders over R1,500.
+      </p>
+      <a href="${STORE_URL}/shop"
+         style="display:inline-block;background:#111;color:#fff;padding:12px 28px;text-decoration:none;border-radius:4px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;">
+        Shop Now
+      </a>
+      <hr style="border:none;border-top:1px solid #eee;margin:32px 0 16px;">
+      <p style="font-size:12px;color:#aaa;margin:0;">
+        Questions? <a href="mailto:hello@renericouture.com" style="color:#111;">hello@renericouture.com</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>`.trim();
+
+  const transporter = getTransporter();
+  try {
+    await transporter.sendMail({
+      from: `"Renéri Couture" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+      to: email,
+      subject: `Welcome to Renéri Couture`,
+      html,
+    });
+  } catch (err) {
+    console.error("[email] Failed to send welcome email:", err);
+  }
+}

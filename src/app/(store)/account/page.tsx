@@ -1,14 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { User, Mail, Lock, LogOut, Package, LayoutDashboard, ChevronRight } from "lucide-react";
+import { User, Mail, Lock, LogOut, Package, LayoutDashboard, ChevronRight, Heart, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import { formatCurrency } from "@/lib/utils";
 import { Order } from "@/lib/types";
+import { useWishlistStore } from "@/lib/store";
 
 interface AuthUser { id: string; email: string; firstName: string; lastName: string; role: string; }
 
@@ -24,12 +25,15 @@ const statusColors: Record<string, "default" | "success" | "warning" | "secondar
 
 export default function AccountPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [mode, setMode] = useState<"login" | "register">("login");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [currentUser, setCurrentUser] = useState<AuthUser | null | undefined>(undefined);
   const [orders, setOrders] = useState<Order[]>([]);
   const [ordersLoading, setOrdersLoading] = useState(false);
+  const [activeTab, setActiveTab] = useState<"orders" | "wishlist">("orders");
+  const { items: wishlistItems, toggle: toggleWishlist } = useWishlistStore();
 
   useEffect(() => {
     fetch("/api/auth/me")
@@ -50,6 +54,7 @@ export default function AccountPage() {
   const [form, setForm] = useState({
     email: "",
     password: "",
+    confirmPassword: "",
     firstName: "",
     lastName: "",
   });
@@ -63,6 +68,12 @@ export default function AccountPage() {
     e.preventDefault();
     setLoading(true);
     setError("");
+
+    if (mode === "register" && form.password !== form.confirmPassword) {
+      setError("Passwords do not match");
+      setLoading(false);
+      return;
+    }
 
     try {
       const endpoint = mode === "login" ? "/api/auth/login" : "/api/auth/register";
@@ -79,8 +90,11 @@ export default function AccountPage() {
         return;
       }
 
+      const redirect = searchParams.get("redirect") || null;
       if (data.user?.role === "admin") {
         router.push("/admin");
+      } else if (redirect) {
+        router.push(redirect);
       } else {
         router.push("/");
       }
@@ -129,10 +143,24 @@ export default function AccountPage() {
           </div>
         </div>
 
-        {/* Order History */}
-        <div>
-          <h2 className="text-lg font-semibold text-neutral-900 mb-4">Order History</h2>
+        {/* Tabs */}
+        <div className="flex border-b border-neutral-200 mb-6">
+          {(["orders", "wishlist"] as const).map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`flex items-center gap-2 px-4 py-3 text-[11px] uppercase tracking-[0.15em] font-medium border-b-2 transition-colors ${
+                activeTab === tab ? "border-black text-black" : "border-transparent text-neutral-400 hover:text-neutral-600"
+              }`}
+            >
+              {tab === "orders" ? <Package className="h-3.5 w-3.5" /> : <Heart className="h-3.5 w-3.5" />}
+              {tab === "orders" ? `Orders (${orders.length})` : `Wishlist (${wishlistItems.length})`}
+            </button>
+          ))}
+        </div>
 
+        {/* Order History */}
+        {activeTab === "orders" && <div>
           {ordersLoading ? (
             <div className="flex items-center justify-center py-16">
               <div className="animate-spin h-6 w-6 border-2 border-neutral-300 border-t-neutral-900 rounded-full" />
@@ -184,7 +212,53 @@ export default function AccountPage() {
               ))}
             </div>
           )}
-        </div>
+        </div>}
+
+        {/* Wishlist */}
+        {activeTab === "wishlist" && (
+          <div>
+            {wishlistItems.length === 0 ? (
+              <div className="text-center py-16 border border-neutral-200 rounded-xl">
+                <Heart className="h-10 w-10 mx-auto text-neutral-300 mb-3" />
+                <p className="font-medium text-neutral-900 mb-1">Your wishlist is empty</p>
+                <p className="text-sm text-neutral-500 mb-6">Save items you love to find them later.</p>
+                <Button asChild variant="outline" className="rounded-full">
+                  <Link href="/shop">Browse Collection</Link>
+                </Button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 gap-4">
+                {wishlistItems.map((product) => (
+                  <div key={product.id} className="border border-neutral-200 rounded-xl overflow-hidden group">
+                    <Link href={`/product/${product.slug}`} className="block aspect-[3/4] overflow-hidden bg-neutral-100 relative">
+                      {product.images[0] ? (
+                        <img src={product.images[0]} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <span className="font-[family-name:var(--font-serif)] text-4xl font-light text-neutral-300 italic">{product.name.charAt(0)}</span>
+                        </div>
+                      )}
+                    </Link>
+                    <div className="p-3">
+                      <Link href={`/product/${product.slug}`}>
+                        <p className="text-[11px] uppercase tracking-[0.12em] font-light text-black truncate mb-1">{product.name}</p>
+                        <p className="text-sm font-light text-black mb-3">{formatCurrency(product.price)}</p>
+                      </Link>
+                      <div className="flex gap-2">
+                        <Link href={`/product/${product.slug}`} className="flex-1 flex items-center justify-center gap-1.5 h-9 bg-black text-white text-[10px] uppercase tracking-[0.15em] font-light rounded">
+                          <ShoppingBag className="h-3 w-3" /> Add to Cart
+                        </Link>
+                        <button onClick={() => toggleWishlist(product)} className="w-9 h-9 border border-neutral-200 rounded flex items-center justify-center text-neutral-400 hover:text-red-500 hover:border-red-200 transition-colors">
+                          <Heart className="h-3.5 w-3.5" fill="currentColor" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
       </div>
     );
   }
@@ -269,6 +343,24 @@ export default function AccountPage() {
             />
           </div>
         </div>
+
+        {mode === "register" && (
+          <div>
+            <label className="text-sm font-medium text-neutral-700 mb-1.5 block">Confirm Password</label>
+            <div className="relative">
+              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-400" />
+              <Input
+                name="confirmPassword"
+                type="password"
+                className="pl-10"
+                value={form.confirmPassword}
+                onChange={handleChange}
+                required
+                minLength={6}
+              />
+            </div>
+          </div>
+        )}
 
         <Button type="submit" className="w-full rounded-full" size="lg" disabled={loading}>
           {loading
