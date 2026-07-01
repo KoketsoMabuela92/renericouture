@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Product, Customer, Order, Category, WishlistItem } from "./types";
+import { Product, Customer, Order, Category, WishlistItem, Event } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -453,4 +453,37 @@ export function syncWishlist(customerId: string, productIds: string[]): void {
   const now = new Date().toISOString();
   toAdd.forEach((productId) => all.push({ id: `${customerId}-${productId}`, customerId, productId, addedAt: now }));
   writeJsonFile("wishlist.json", all);
+}
+
+// Events
+export function getEvents(): Event[] {
+  return readJsonFile<Event>("events.json", []);
+}
+
+export function getEventById(id: string): Event | undefined {
+  return getEvents().find((e) => e.id === id);
+}
+
+export function createEvent(event: Event): Event {
+  const events = getEvents();
+  events.push(event);
+  writeJsonFile("events.json", events);
+  return event;
+}
+
+export function updateEvent(id: string, updates: Partial<Event>): Event | null {
+  const events = getEvents();
+  const index = events.findIndex((e) => e.id === id);
+  if (index === -1) return null;
+  events[index] = { ...events[index], ...updates, updatedAt: new Date().toISOString() };
+  writeJsonFile("events.json", events);
+  return events[index];
+}
+
+export function deleteEvent(id: string): boolean {
+  const events = getEvents();
+  const filtered = events.filter((e) => e.id !== id);
+  if (filtered.length === events.length) return false;
+  writeJsonFile("events.json", filtered);
+  return true;
 }

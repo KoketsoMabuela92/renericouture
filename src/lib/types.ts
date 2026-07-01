@@ -105,6 +105,19 @@ export interface WishlistItem {
   addedAt: string;
 }
 
+export interface Event {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  time: string;
+  location: string;
+  imageUrl?: string;
+  active: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface DashboardStats {
   totalRevenue: number;
   totalOrders: number;
