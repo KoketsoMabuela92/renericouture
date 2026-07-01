@@ -11,7 +11,6 @@ const navigation = [
   { name: "Women", href: "/shop?category=women" },
   { name: "Men", href: "/shop?category=men" },
   { name: "Accessories", href: "/shop?category=accessories" },
-  { name: "Events", href: "/events" },
 ];
 
 interface AuthUser { id: string; email: string; firstName: string; lastName: string; role: string; }
